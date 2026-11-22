@@ -1,0 +1,61 @@
+name: Bug / 问题反馈
+description: 提供设备、版本、复现情况和预期结果，方便直接排查。
+title: "[Bug] "
+type: Bug
+labels: [bug]
+projects: [Songo-Labs/1]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        先搜索是否已有同一问题。字段不知道时请写“未知”并说明原因，不需要猜测根因。
+        设备和版本只填写与问题有关的部分；截图、录像、日志可直接拖入最后一栏。
+  - type: input
+    id: environment
+    attributes:
+      label: 发生的设备 / 运行环境
+      description: App 填手机型号和系统；主板 FW 填设备型号或硬件版本；CAN FW 填 CAN 板和主控板型号或硬件版本；Admin、官网、后端和 CI 填环境、浏览器或运行平台。
+      placeholder: "例如：iPhone + iOS 版本；坐垫硬件版本；测试环境 + 浏览器版本"
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: 发生问题的版本
+      description: App 填版本和 build；主板与 CAN FW 填完整 Tag 或 commit；Admin 和后端填部署版本或 commit；CI 可附 run 链接。跨端问题请把相关版本一起填上。
+      placeholder: "App：… (build …)；主板 / CAN FW：…；Admin / 后端 / CI：…"
+    validations:
+      required: true
+  - type: dropdown
+    id: reproducibility
+    attributes:
+      label: 是否可复现
+      options:
+        - 每次都能复现
+        - 偶发（在步骤中补充次数 / 频率）
+        - 仅发生一次，暂未复现
+        - 尚未确认
+      default: 3
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤 / 发生经过
+      description: 写前置条件与操作顺序；不能复现时描述当时发生了什么，偶发问题补充出现次数。
+      placeholder: "前置条件：\n1. …\n2. …\n复现次数（如适用）：… / …"
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: 实际结果与预期结果
+      description: 分别说明实际看到了什么、正确结果应是什么。可补充对使用的影响及是否有绕过办法。
+      placeholder: "实际结果：\n预期结果：\n影响 / 绕过办法（选填）："
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 截图、日志与关联 Issue（选填）
+      description: 可拖入截图/录像/日志，或粘贴关联需求链接。分享前移除密码、令牌等敏感内容。

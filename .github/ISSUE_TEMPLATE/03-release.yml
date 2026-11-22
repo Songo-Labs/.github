@@ -1,0 +1,529 @@
+{
+  "name": "版本 / Release",
+  "description": "填写目标版本，选择发布阶段与组件版本，记录 Release notes、已知问题和发布结果。",
+  "title": "[Release] ",
+  "type": "Task",
+  "labels": [
+    "release"
+  ],
+  "projects": [
+    "Songo-Labs/1"
+  ],
+  "body": [
+    {
+      "type": "markdown",
+      "attributes": {
+        "value": "在实际发布组件的仓库创建版本单。先填写目标版本与发布阶段，再选择本次涉及的组件版本；发布前补齐说明和验收记录，实际发布后关闭。"
+      }
+    },
+    {
+      "type": "input",
+      "id": "version",
+      "attributes": {
+        "label": "目标版本",
+        "description": "填写本次计划发布的版本号 / build。",
+        "placeholder": "完整 Tag，或平台版本号与 build"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "dropdown",
+      "id": "channel",
+      "attributes": {
+        "label": "发布阶段",
+        "description": "按本次发布的目标阶段选择。实际接收对象与分发链接记入下方的验收与发布记录。",
+        "options": [
+          "Dev（开发联调）",
+          "Alpha（早期验证）",
+          "Beta（测试与试用）",
+          "RC（发布候选）",
+          "Stable（正式发布）"
+        ]
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "markdown",
+      "attributes": {
+        "value": "### 版本范围\n每个组件选择一个版本；不涉及的保持“不涉及”，版本尚未建立时选“待补充”。发布前确认各组件版本及兼容性。标有“平台未注明”的 App 版本，选择前需确认适用平台。"
+      }
+    },
+    {
+      "type": "dropdown",
+      "id": "scope-ios",
+      "attributes": {
+        "label": "iOS App",
+        "multiple": false,
+        "default": 0,
+        "options": [
+          "不涉及",
+          "待补充",
+          "release iOS 1.0.0 (build 2026112101)（平台未注明）",
+          "release Android 1.0.0 (build 2026112101)（平台未注明）",
+          "release iOS 1.0.0 (build 2026112011)（平台未注明）",
+          "release Android 1.0.0 (build 2026112011)（平台未注明）",
+          "test iOS 1.0.0 (build 2026112010)（平台未注明）",
+          "test Android 1.0.0 (build 2026112010)（平台未注明）",
+          "release iOS 1.0.0 (build 2026112009)（平台未注明）",
+          "release Android 1.0.0 (build 2026112009)（平台未注明）",
+          "release iOS 1.0.0 (build 2026112008)（平台未注明）",
+          "release Android 1.0.0 (build 2026112008)（平台未注明）",
+          "test iOS 1.0.0 (build 2026112007)（平台未注明）",
+          "test Android 1.0.0 (build 2026112007)（平台未注明）",
+          "test iOS 1.0.0 (build 2026112006)（平台未注明）",
+          "test Android 1.0.0 (build 2026112006)（平台未注明）",
+          "test iOS 1.0.0 (build 2026112005)（平台未注明）",
+          "test Android 1.0.0 (build 2026112005)（平台未注明）",
+          "release iOS 1.0.0 (build 2026112004)（平台未注明）",
+          "release Android 1.0.0 (build 2026112004)（平台未注明）",
+          "test iOS 1.0.0 (build 2026112003)（平台未注明）",
+          "test Android 1.0.0 (build 2026112003)（平台未注明）",
+          "release iOS 1.0.0 (build 2026112002)（平台未注明）",
+          "release Android 1.0.0 (build 2026112002)（平台未注明）",
+          "release iOS 1.0.0 (build 2026112001)（平台未注明）",
+          "release Android 1.0.0 (build 2026112001)（平台未注明）",
+          "test iOS 1.0.0 (build 2026111901)（平台未注明）",
+          "test Android 1.0.0 (build 2026111901)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111803)（平台未注明）",
+          "release Android 1.0.0 (build 2026111803)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111802)（平台未注明）",
+          "release Android 1.0.0 (build 2026111802)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111801)（平台未注明）",
+          "release Android 1.0.0 (build 2026111801)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111702)（平台未注明）",
+          "release Android 1.0.0 (build 2026111702)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111701)（平台未注明）",
+          "release Android 1.0.0 (build 2026111701)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111603)（平台未注明）",
+          "release Android 1.0.0 (build 2026111603)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111602)（平台未注明）",
+          "release Android 1.0.0 (build 2026111602)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111601)（平台未注明）",
+          "release Android 1.0.0 (build 2026111601)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111305)（平台未注明）",
+          "release Android 1.0.0 (build 2026111305)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111304)（平台未注明）",
+          "release Android 1.0.0 (build 2026111304)（平台未注明）",
+          "release Android 1.0.0 (build 2026111303)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111303)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111302)（平台未注明）",
+          "release Android 1.0.0 (build 2026111302)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111301)（平台未注明）",
+          "release Android 1.0.0 (build 2026111301)（平台未注明）",
+          "release Android 1.0.0 (build 2026111204)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111204)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111203)（平台未注明）",
+          "release Android 1.0.0 (build 2026111203)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111202)（平台未注明）",
+          "release Android 1.0.0 (build 2026111202)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111201)（平台未注明）",
+          "release Android 1.0.0 (build 2026111201)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111103)（平台未注明）",
+          "release Android 1.0.0 (build 2026111103)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111102)（平台未注明）",
+          "release Android 1.0.0 (build 2026111102)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111101)（平台未注明）",
+          "release Android 1.0.0 (build 2026111101)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111002)（平台未注明）",
+          "release Android 1.0.0 (build 2026111002)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111001)（平台未注明）",
+          "release Android 1.0.0 (build 2026111001)（平台未注明）",
+          "release iOS 1.0.0 (build 1000000165)（平台未注明）",
+          "release Android 1.0.0 (build 1000000165)（平台未注明）",
+          "test iOS 1.0.0 (build 1000000163)（平台未注明）",
+          "test Android 1.0.0 (build 1000000163)（平台未注明）",
+          "test iOS 1.0.0 (build 1000000162)（平台未注明）",
+          "test Android 1.0.0 (build 1000000162)（平台未注明）",
+          "release iOS 1.0.0 (build 1000000161)（平台未注明）",
+          "release Android 1.0.0 (build 1000000161)（平台未注明）",
+          "iOS 1.0.0 (build 26110903)",
+          "iOS 1.0.0 (build 26110902)",
+          "iOS 1.0.0 (build 26110901)",
+          "iOS 1.0.0 (build 26110602)",
+          "iOS 1.0.0 (build 26110601)",
+          "iOS 1.0.0 (build 26110501)",
+          "iOS 1.0.0 (build 26110405)",
+          "iOS 1.0.0 (build 26110404)",
+          "iOS 1.0.0 (build 26110403)",
+          "iOS 1.0.0 (build 26110402)",
+          "iOS 1.0.0 (build 26110401)",
+          "iOS 1.0.0 (build 26110305)",
+          "iOS 1.0.0 (build 26110304)",
+          "iOS 1.0.0 (build 26110302)",
+          "iOS 1.0.0 (build 26110204)",
+          "iOS 1.0.0 (build 26110202)",
+          "iOS 1.0.0 (build 26110201)",
+          "iOS 1.0.0 (build 26103004)",
+          "iOS 1.0.0 (build 26103002)",
+          "iOS 1.0.0 (build 26102901)",
+          "0.8.3（平台未注明）",
+          "iOS 1.0.0 (build 26102804)",
+          "iOS 1.0.0 (build 26102803)"
+        ]
+      }
+    },
+    {
+      "type": "dropdown",
+      "id": "scope-android",
+      "attributes": {
+        "label": "Android App",
+        "multiple": false,
+        "default": 0,
+        "options": [
+          "不涉及",
+          "待补充",
+          "release iOS 1.0.0 (build 2026112101)（平台未注明）",
+          "release Android 1.0.0 (build 2026112101)（平台未注明）",
+          "release iOS 1.0.0 (build 2026112011)（平台未注明）",
+          "release Android 1.0.0 (build 2026112011)（平台未注明）",
+          "test iOS 1.0.0 (build 2026112010)（平台未注明）",
+          "test Android 1.0.0 (build 2026112010)（平台未注明）",
+          "release iOS 1.0.0 (build 2026112009)（平台未注明）",
+          "release Android 1.0.0 (build 2026112009)（平台未注明）",
+          "release iOS 1.0.0 (build 2026112008)（平台未注明）",
+          "release Android 1.0.0 (build 2026112008)（平台未注明）",
+          "test iOS 1.0.0 (build 2026112007)（平台未注明）",
+          "test Android 1.0.0 (build 2026112007)（平台未注明）",
+          "test iOS 1.0.0 (build 2026112006)（平台未注明）",
+          "test Android 1.0.0 (build 2026112006)（平台未注明）",
+          "test iOS 1.0.0 (build 2026112005)（平台未注明）",
+          "test Android 1.0.0 (build 2026112005)（平台未注明）",
+          "release iOS 1.0.0 (build 2026112004)（平台未注明）",
+          "release Android 1.0.0 (build 2026112004)（平台未注明）",
+          "test iOS 1.0.0 (build 2026112003)（平台未注明）",
+          "test Android 1.0.0 (build 2026112003)（平台未注明）",
+          "release iOS 1.0.0 (build 2026112002)（平台未注明）",
+          "release Android 1.0.0 (build 2026112002)（平台未注明）",
+          "release iOS 1.0.0 (build 2026112001)（平台未注明）",
+          "release Android 1.0.0 (build 2026112001)（平台未注明）",
+          "test iOS 1.0.0 (build 2026111901)（平台未注明）",
+          "test Android 1.0.0 (build 2026111901)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111803)（平台未注明）",
+          "release Android 1.0.0 (build 2026111803)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111802)（平台未注明）",
+          "release Android 1.0.0 (build 2026111802)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111801)（平台未注明）",
+          "release Android 1.0.0 (build 2026111801)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111702)（平台未注明）",
+          "release Android 1.0.0 (build 2026111702)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111701)（平台未注明）",
+          "release Android 1.0.0 (build 2026111701)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111603)（平台未注明）",
+          "release Android 1.0.0 (build 2026111603)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111602)（平台未注明）",
+          "release Android 1.0.0 (build 2026111602)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111601)（平台未注明）",
+          "release Android 1.0.0 (build 2026111601)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111305)（平台未注明）",
+          "release Android 1.0.0 (build 2026111305)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111304)（平台未注明）",
+          "release Android 1.0.0 (build 2026111304)（平台未注明）",
+          "release Android 1.0.0 (build 2026111303)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111303)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111302)（平台未注明）",
+          "release Android 1.0.0 (build 2026111302)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111301)（平台未注明）",
+          "release Android 1.0.0 (build 2026111301)（平台未注明）",
+          "release Android 1.0.0 (build 2026111204)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111204)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111203)（平台未注明）",
+          "release Android 1.0.0 (build 2026111203)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111202)（平台未注明）",
+          "release Android 1.0.0 (build 2026111202)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111201)（平台未注明）",
+          "release Android 1.0.0 (build 2026111201)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111103)（平台未注明）",
+          "release Android 1.0.0 (build 2026111103)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111102)（平台未注明）",
+          "release Android 1.0.0 (build 2026111102)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111101)（平台未注明）",
+          "release Android 1.0.0 (build 2026111101)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111002)（平台未注明）",
+          "release Android 1.0.0 (build 2026111002)（平台未注明）",
+          "release iOS 1.0.0 (build 2026111001)（平台未注明）",
+          "release Android 1.0.0 (build 2026111001)（平台未注明）",
+          "release iOS 1.0.0 (build 1000000165)（平台未注明）",
+          "release Android 1.0.0 (build 1000000165)（平台未注明）",
+          "test iOS 1.0.0 (build 1000000163)（平台未注明）",
+          "test Android 1.0.0 (build 1000000163)（平台未注明）",
+          "test iOS 1.0.0 (build 1000000162)（平台未注明）",
+          "test Android 1.0.0 (build 1000000162)（平台未注明）",
+          "release iOS 1.0.0 (build 1000000161)（平台未注明）",
+          "release Android 1.0.0 (build 1000000161)（平台未注明）",
+          "Android 1.0.0 (build 26110903)",
+          "Android 1.0.0 (build 26110902)",
+          "Android 1.0.0 (build 26110901)",
+          "Android 1.0.0 (build 26110602)",
+          "Android 1.0.0 (build 26110601)",
+          "Android 1.0.0 (build 26110501)",
+          "Android 1.0.0 (build 26110405)",
+          "Android 1.0.0 (build 26110404)",
+          "Android 1.0.0 (build 26110403)",
+          "Android 1.0.0 (build 26110402)",
+          "Android 1.0.0 (build 26110401)",
+          "Android 1.0.0 (build 26110305)",
+          "Android 1.0.0 (build 26110304)",
+          "Android 1.0.0 (build 26110302)",
+          "Android 1.0.0 (build 26110204)",
+          "Android 1.0.0 (build 26110202)",
+          "Android 1.0.0 (build 26110201)",
+          "Android 1.0.0 (build 26103004)",
+          "Android 1.0.0 (build 26103002)",
+          "Android 1.0.0 (build 26102901)",
+          "0.8.3（平台未注明）",
+          "Android 1.0.0 (build 26102804)",
+          "Android 1.0.0 (build 26102803)"
+        ]
+      }
+    },
+    {
+      "type": "dropdown",
+      "id": "scope-fw",
+      "attributes": {
+        "label": "主板 FW",
+        "multiple": false,
+        "default": 0,
+        "options": [
+          "不涉及",
+          "待补充",
+          "v0.8.20-build141",
+          "v0.8.19-build140",
+          "v0.8.18-build139",
+          "v0.8.19-build138",
+          "v0.8.19-build137",
+          "v0.8.19-build136",
+          "v0.8.18-build135",
+          "v0.8.17-build134",
+          "v0.8.16-build133",
+          "v0.8.16-build132",
+          "v0.8.15-build131",
+          "v0.8.15-build130",
+          "v0.8.14-build129",
+          "v0.8.13-build128",
+          "v0.8.12-build127",
+          "v0.8.11-build126",
+          "v0.8.11-build125",
+          "v0.8.10-build124",
+          "v0.8.9-build123",
+          "v0.8.9-build122",
+          "v0.8.8-build121",
+          "v0.8.7-build120",
+          "v0.8.6-build119",
+          "v0.8.6-build117",
+          "v0.8.6-build116",
+          "v0.8.6-build115",
+          "v0.8.5-build114",
+          "v0.8.4-build112",
+          "v0.8.3-build111",
+          "v0.8.2-build110",
+          "v0.8.1-build109",
+          "v0.8.1-build108",
+          "v0.7.16-build107",
+          "v0.7.15-build106",
+          "v0.7.13-build105",
+          "v0.7.13-build104",
+          "v0.7.12-build103",
+          "v0.7.11-build102",
+          "v0.7.10-build101",
+          "v0.7.9-build100",
+          "v0.7.8-build99",
+          "v0.7.8-build98",
+          "v0.7.7-build97",
+          "v0.7.7-build96",
+          "v0.7.5-build85",
+          "v0.7.4-build84",
+          "v0.7.3-build83",
+          "v0.7.3-build82",
+          "v0.7.2-build81",
+          "v0.7.1-build80",
+          "v0.7.0-build79",
+          "v0.7.0-build78",
+          "v0.7.0-build77",
+          "v0.6.10-build76",
+          "v0.6.9-build75",
+          "v0.6.8-build74",
+          "v0.6.7-build73",
+          "v0.6.6-build72",
+          "v0.6.5-build71",
+          "v0.6.5-build70",
+          "v0.6.4-build69",
+          "v0.6.4-build68",
+          "v0.6.4-build67",
+          "v0.6.2-build66",
+          "v0.6.1-build65",
+          "v0.6.0-build64",
+          "v0.5.9-build63",
+          "v0.5.8-build62",
+          "v0.5.8-build61",
+          "v0.5.7-build60",
+          "v0.5.6-build59",
+          "v0.5.6-build58",
+          "v0.5.6-build57",
+          "v0.5.6-build56",
+          "v0.5.6-build55",
+          "v0.5.5-build54",
+          "v0.5.4-build53",
+          "v0.5.4-build52",
+          "v0.5.3-build51",
+          "v0.5.2-build50",
+          "v0.5.1-build49",
+          "v0.5.1-build48",
+          "v0.5.0-build47",
+          "v0.5.0-build46",
+          "v0.5.0-build45",
+          "v0.5.0-build44",
+          "v0.5.0-build43",
+          "v0.5.0-build42",
+          "v0.4.9-build41",
+          "v0.4.8-build40",
+          "v0.4.7-build39",
+          "v0.4.6-build38",
+          "v0.4.6-build37",
+          "v0.4.6-build36",
+          "v0.4.6-build35",
+          "v0.4.6-build34",
+          "v0.4.6-build33",
+          "v0.4.5-build32",
+          "v0.4.4-build31",
+          "v0.4.3-build30",
+          "v0.4.1-build27",
+          "v0.4.1-build26",
+          "v0.4.1-build25",
+          "v0.4.1-build24",
+          "v0.4.1-build23",
+          "v0.4.0-build22",
+          "v0.4.0-build21",
+          "v0.4.0-build19"
+        ]
+      }
+    },
+    {
+      "type": "dropdown",
+      "id": "scope-can",
+      "attributes": {
+        "label": "CAN FW",
+        "multiple": false,
+        "default": 0,
+        "options": [
+          "不涉及",
+          "待补充"
+        ]
+      }
+    },
+    {
+      "type": "dropdown",
+      "id": "scope-cloud",
+      "attributes": {
+        "label": "后端",
+        "multiple": false,
+        "default": 0,
+        "options": [
+          "不涉及",
+          "待补充"
+        ]
+      }
+    },
+    {
+      "type": "dropdown",
+      "id": "scope-admin",
+      "attributes": {
+        "label": "Admin 管理后台",
+        "multiple": false,
+        "default": 0,
+        "options": [
+          "不涉及",
+          "待补充"
+        ]
+      }
+    },
+    {
+      "type": "dropdown",
+      "id": "scope-ci",
+      "attributes": {
+        "label": "CI",
+        "multiple": false,
+        "default": 0,
+        "options": [
+          "不涉及",
+          "待补充"
+        ]
+      }
+    },
+    {
+      "type": "dropdown",
+      "id": "scope-website",
+      "attributes": {
+        "label": "官网",
+        "multiple": false,
+        "default": 0,
+        "options": [
+          "不涉及",
+          "待补充"
+        ]
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "release-notes",
+      "attributes": {
+        "label": "Release notes",
+        "description": "说明本版新增、改进和修复；可引用需求 / Bug。涉及跨端联动时，注明上方版本组合的兼容性验证结果。",
+        "placeholder": "新增 / 改进：\n- …\n\n修复：\n- …\n\n使用或升级说明（如有）：\n- …"
+      }
+    },
+    {
+      "type": "dropdown",
+      "id": "known-issues-status",
+      "attributes": {
+        "label": "已知问题",
+        "options": [
+          "待验收确认",
+          "无已知问题",
+          "有已知问题"
+        ],
+        "default": 0
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "known-issues",
+      "attributes": {
+        "label": "已知问题详情（选填）",
+        "description": "仅在存在已知问题时填写：关联 Bug、影响范围、绕过办法，以及是否影响本次发布。"
+      }
+    },
+    {
+      "type": "checkboxes",
+      "id": "release-checks",
+      "attributes": {
+        "label": "发布检查（执行时逐项勾选）",
+        "options": [
+          {
+            "label": "范围内需求与 Bug 已验收，未完成项已明确移出本版"
+          },
+          {
+            "label": "阻断发布的问题已解决，回归与适用的跨端兼容性验证已完成"
+          },
+          {
+            "label": "Release notes、已知问题、构建产物与适用的回退方案已确认"
+          },
+          {
+            "label": "已实际发布，并记录版本、接收对象、时间和链接"
+          }
+        ]
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "evidence",
+      "attributes": {
+        "label": "验收与发布记录（执行后补充）",
+        "description": "接收对象、测试报告、GitHub Release / 分发链接或部署记录。选择本仓库实际验收版本的 Milestone 后再关闭；App 请注明已分发、已审核或已上架等真实状态。"
+      }
+    }
+  ]
+}
