@@ -62,6 +62,10 @@
         "options": [
           "不涉及",
           "待补充",
+          "release iOS 1.0.0 (build 2026112502)（平台未注明）",
+          "release Android 1.0.0 (build 2026112502)（平台未注明）",
+          "release iOS 1.0.0 (build 2026112501)（平台未注明）",
+          "release Android 1.0.0 (build 2026112501)（平台未注明）",
           "release iOS 1.0.0 (build 2026112403)（平台未注明）",
           "release Android 1.0.0 (build 2026112403)（平台未注明）",
           "release iOS 1.0.0 (build 2026112402)（平台未注明）",
@@ -190,6 +194,10 @@
         "options": [
           "不涉及",
           "待补充",
+          "release iOS 1.0.0 (build 2026112502)（平台未注明）",
+          "release Android 1.0.0 (build 2026112502)（平台未注明）",
+          "release iOS 1.0.0 (build 2026112501)（平台未注明）",
+          "release Android 1.0.0 (build 2026112501)（平台未注明）",
           "release iOS 1.0.0 (build 2026112403)（平台未注明）",
           "release Android 1.0.0 (build 2026112403)（平台未注明）",
           "release iOS 1.0.0 (build 2026112402)（平台未注明）",
@@ -318,6 +326,7 @@
         "options": [
           "不涉及",
           "待补充",
+          "v0.8.22-build145",
           "v0.8.21-build144",
           "v0.8.21-build143",
           "v0.8.21-build142",
